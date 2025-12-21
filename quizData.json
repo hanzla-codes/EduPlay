@@ -1,0 +1,113 @@
+{
+  "beginner": [
+    {
+      "question": "What does HTML stand for?",
+      "type": "multiple-choice",
+      "options": [
+        "Hyper Text Markup Language",
+        "High-level Text Management Language",
+        "Home Tool Markup Language",
+        "Hyperlink and Text Markup Language"
+      ],
+      "answer": "Hyper Text Markup Language"
+    },
+    {
+      "question": "Which CSS property is used to change the text color?",
+      "type": "multiple-choice",
+      "options": [
+        "background-color",
+        "color",
+        "font-color",
+        "text-style"
+      ],
+      "answer": "color"
+    },
+    {
+      "question": "In JavaScript, what keyword is used to declare a variable?",
+      "type": "multiple-choice",
+      "options": [
+        "var",
+        "string",
+        "declare",
+        "int"
+      ],
+      "answer": "var"
+    },
+    {
+      "question": "Which tag is used to create a hyperlink?",
+      "type": "multiple-choice",
+      "options": [
+        "<link>",
+        "<a>",
+        "<href>",
+        "<nav>"
+      ],
+      "answer": "<a>"
+    },
+    {
+      "question": "What is the primary function of JavaScript in a web page?",
+      "type": "multiple-choice",
+      "options": [
+        "Styling the page",
+        "Structuring the content",
+        "Adding interactivity",
+        "Managing server data"
+      ],
+      "answer": "Adding interactivity"
+    }
+  ],
+  "intermediate": [
+    {
+      "question": "In CSS, the inner space between the content and the border is called: ________",
+      "type": "short-answer",
+      "answer": "padding"
+    },
+    {
+      "question": "Which JavaScript loop is best suited for iterating over array elements?",
+      "type": "short-answer",
+      "answer": "for"
+    },
+    {
+      "question": "The standard method for making asynchronous web requests in modern JS is: ________",
+      "type": "short-answer",
+      "answer": "fetch"
+    },
+    {
+      "question": "To display an element without reserving space on the page, use CSS property `display: ________`.",
+      "type": "short-answer",
+      "answer": "none"
+    },
+    {
+      "question": "What is the official term for writing HTML, CSS, and JS using modern standards (starting with 2015)?",
+      "type": "short-answer",
+      "answer": "ES6"
+    }
+  ],
+  "advanced": [
+    {
+      "question": "Which feature allows functions to be written as shorter syntax using `=>`?",
+      "type": "short-answer",
+      "answer": "Arrow Functions"
+    },
+    {
+      "question": "The browser's mechanism for handling function calls in a particular order (LIFO) is the: ________",
+      "type": "short-answer",
+      "answer": "Call Stack"
+    },
+    {
+      "question": "In CSS, which unit represents the font size of the root element?",
+      "type": "short-answer",
+      "answer": "rem"
+    },
+    {
+      "question": "The term for when a function can remember and access its lexical scope even when executed elsewhere is: ________",
+      "type": "short-answer",
+      "answer": "Closure"
+    },
+    {
+      "question": "Which HTTP method is primarily used to submit data to be processed to a specified resource?",
+      "type": "short-answer",
+      "answer": "POST"
+    }
+  ]
+}

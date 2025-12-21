@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Technology Quiz</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="mainContainer" class="main-container">
+      <header id="appHeader" class="app-header">
+        <div class="logo">
+          EduPlay
+          <span style="font-size: 14px; font-weight: 400; color: #aaa"
+            >An Interactive Web Technology Quiz App</span
+          >
+        </div>
+        <nav class="user-nav">
+          <div id="authNavButtons" class="auth-buttons">
+            <button
+              onclick="showLogin()"
+              class="nav-button secondary-nav-button"
+            >
+              Login
+            </button>
+            <button
+              onclick="showRegister()"
+              class="nav-button primary-nav-button"
+            >
+              Register
+            </button>
+          </div>
+
+          <div id="loggedInNav" class="logged-in-nav hidden">
+            <span id="userNameDisplay"></span>
+            <button
+              id="logoutBtn"
+              onclick="logout()"
+              class="nav-button secondary-nav-button"
+            >
+              Logout
+            </button>
+          </div>
+        </nav>
+      </header>
+
+      <div id="contentArea" class="content-area">
+        <div id="authPageContainer" class="landing-page-container">
+          <div class="landing-content">
+            <h1 class="landing-title">
+              Master Frontend Development. Quiz By Quiz.
+            </h1>
+            <p class="landing-description">
+              Welcome to Web Quiz Pro! The ultimate platform to test and enhance
+              your skills in <b>HTML, CSS, and JavaScript</b>. Our quizzes are
+              structured into three progressively challenging levels:
+              <b>Beginner, Intermediate, and Advanced</b>.
+            </p>
+            <p class="landing-cta">
+              Ready to start your coding journey? <b>Login</b> or
+              <b>Register</b> now!
+            </p>
+            <div class="interactive-demo">
+              <span class="demo-item">💡 15 Challenging Questions</span>
+              <span class="demo-item">📈 Level-wise Score Tracking</span>
+              <span class="demo-item">🏆 Achieve Web Mastery</span>
+            </div>
+            <!-- Future Implementations Section -->
+            <div class="future-scope">
+              <h2 class="section-title">
+                Future Implementations <br> (Scope for Enhancement)
+              </h2>
+
+              <div class="scope-item">
+                <h3>Backend Integration & Database</h3>
+                <p>
+                  <b>Current Limitation:</b> Reliance on Local Storage limits
+                  data persistence and security.
+                </p>
+                <p>
+                  <b>Proposed Solution:</b> Implement a backend using
+                  <b>Node.js with Express</b> or <b>Django</b>, integrated with
+                  <b>MongoDB</b> or <b>PostgreSQL</b>.
+                </p>
+                <p>
+                  <b>Benefits:</b> Secure authentication, persistent user data
+                  storage, and global score management.
+                </p>
+              </div>
+
+              <div class="scope-item">
+                <h3>Advanced Functionalities</h3>
+                <ul class="scope-list">
+                  <li>🌍 Global Leaderboard</li>
+                  <li>⏱️ Question Timer</li>
+                  <li>📊 Detailed Answer Review</li>
+                  <li>📚 Multi-Subject Support (React, Vue, TypeScript)</li>
+                  <li>🛠️ Admin Dashboard for Question Management</li>
+                </ul>
+              </div>
+          </div>
+          </div>
+        </div>
+
+        <div id="authFormsWrapper" class="auth-forms-wrapper hidden">
+          <div id="loginPage" class="card auth-card hidden">
+            <h2>Login to Web Quiz Pro</h2>
+            <input
+              id="loginUser"
+              placeholder="Username"
+              aria-label="Username"
+              onkeypress="handleKeyPress(event, 'login')"
+            />
+            <input
+              id="loginPass"
+              type="password"
+              placeholder="Password"
+              aria-label="Password"
+              onkeypress="handleKeyPress(event, 'login')"
+            />
+            <button onclick="login()">Login</button>
+            <p>
+              Don't have an account?
+              <span onclick="showRegister()">Register</span>
+            </p>
+            <p id="loginMsg" class="infoMsg hidden"></p>
+          </div>
+
+          <div id="registerPage" class="card auth-card hidden">
+            <h2>Create Your Account</h2>
+            <input
+              id="regUser"
+              placeholder="Username"
+              aria-label="Username"
+              onkeypress="handleKeyPress(event, 'register')"
+            />
+            <input
+              id="regPass"
+              type="password"
+              placeholder="Password"
+              aria-label="Password"
+              onkeypress="handleKeyPress(event, 'register')"
+            />
+            <button onclick="register()">Register</button>
+            <p>Already registered? <span onclick="showLogin()">Login</span></p>
+            <p id="registerMsg" class="infoMsg hidden"></p>
+          </div>
+        </div>
+
+        <div id="loggedInContent" class="logged-in-content-wrapper hidden">
+          <div id="homePage" class="card home-card hidden">
+            <h2 id="homeWelcome"></h2>
+            <p class="summary-text">
+              Ready to push your limits? Start the quiz now or check out the
+              scoring structure below.
+            </p>
+            <button onclick="startQuiz()" class="start-btn">
+              Start New Quiz
+            </button>
+
+            <div class="score-breakdown">
+              <h3>Scoring & Levels</h3>
+              <ul>
+                <li>
+                  <span class="level-badge beginner-badge">Beginner (5 Qs)</span
+                  >: Focus on basics. <b>2 Points</b> per answer.
+                </li>
+                <li>
+                  <span class="level-badge intermediate-badge"
+                    >Intermediate (5 Qs)</span
+                  >: Focus on practical concepts. <b>5 Points</b> per answer.
+                </li>
+                <li>
+                  <span class="level-badge advanced-badge">Advanced (5 Qs)</span
+                  >: Deep dive into theory/performance. <b>10 Points</b> per
+                  answer.
+                </li>
+              </ul>
+              <p>Total possible score: 85 Points</p>
+            </div>
+          </div>
+
+          <div id="quizPage" class="card quiz-card hidden animate">
+            <div id="levelDescriptionBox" class="level-description-box">
+              <h3 id="currentLevelTitle"></h3>
+              <p id="currentLevelDescription"></p>
+            </div>
+
+            <h4 id="levelText"></h4>
+            <div class="progress-bar">
+              <div id="progressFill"></div>
+            </div>
+            <p id="progress"></p>
+            <h3 id="question"></h3>
+
+            <div id="options"></div>
+
+            <input
+              id="answerInput"
+              class="short-answer-input hidden"
+              placeholder="Type your answer (e.g., 'padding')"
+              aria-label="Short Answer Input"
+              onkeypress="handleKeyPress(event, 'submit')"
+            />
+
+            <textarea
+              id="advancedInput"
+              class="hidden"
+              placeholder="Write your answer here..."
+              aria-label="Advanced Answer"
+              onkeypress="handleKeyPress(event, 'submit')"
+            ></textarea>
+
+            <button onclick="submitAnswer()">Submit</button>
+
+            <div id="messageBox" class="message hidden">
+              <p id="messageText"></p>
+              <div id="msgBtns" class="msgBtns hidden"></div>
+            </div>
+          </div>
+
+          <div id="resultPage" class="card result-card hidden">
+            <h2>Final Result 🎉</h2>
+            <div id="scoreText"></div>
+            <button onclick="showHome()">Go Home</button>
+          </div>
+        </div>
+      </div>
+
+      <footer id="appFooter" class="app-footer">
+        <p>&copy; 2025 EduPlay. Developed by <b>MUHAMMAD HANZLA</b>.</p>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
