@@ -1,428 +1,479 @@
 * {
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 :root {
-    --primary-color: #4a55e1;
-    --secondary-color: #6d80f8;
-    --background-color: #eef2ff; /* Very light blue background */
-    --card-bg: white;
-    --text-color: #333;
-    --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    --footer-bg: #333;
-    --footer-text: #ddd;
+  --primary-color: #4a55e1;
+  --secondary-color: #6d80f8;
+  --background-color: #eef2ff; /* Very light blue background */
+  --card-bg: white;
+  --text-color: #333;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  --footer-bg: #333;
+  --footer-text: #ddd;
 }
 
 body {
-    background: var(--background-color);
-    margin: 0;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column; /* Main container fills viewport */
-    color: var(--text-color);
+  background: var(--background-color);
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; /* Main container fills viewport */
+  color: var(--text-color);
 }
 
 /* --- MAIN LAYOUT --- */
 .main-container {
-    display: flex;
-    flex-direction: column; 
-    min-height: 100vh;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
 }
 
 .app-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 40px;
-    background: var(--card-bg);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 40px;
+  background: var(--card-bg);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  z-index: 100;
 }
 
 .logo {
-    font-size: 24px;
-    font-weight: 700;
-    color: var(--primary-color);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary-color);
 }
 
 .user-nav {
-    display: flex; /* Ensure the navigation container is a flex container */
-    align-items: center;
+  display: flex; /* Ensure the navigation container is a flex container */
+  align-items: center;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-right: 20px;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--text-color);
+  position: relative;
+  padding: 5px 0;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--primary-color);
+}
+
+/* Underline hover effect */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
 }
 
 /* Buttons Side-by-Side Fix */
 .auth-buttons,
 .logged-in-nav {
-    display: flex; /* Make the buttons inside these divs align horizontally */
-    align-items: center;
+  display: flex; /* Make the buttons inside these divs align horizontally */
+  align-items: center;
 }
 
 .nav-button {
-    padding: 8px 15px;
-    margin-left: 10px; /* Space between buttons */
-    border: 1px solid transparent;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: all 0.2s;
+  padding: 8px 15px;
+  margin-left: 10px; /* Space between buttons */
+  border: 1px solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s;
 }
 
 .primary-nav-button {
-    background: var(--primary-color);
-    color: white;
+  background: var(--primary-color);
+  color: white;
 }
 .primary-nav-button:hover {
-    background: var(--secondary-color);
+  background: var(--secondary-color);
 }
 
 .secondary-nav-button {
-    background: none;
-    color: var(--primary-color);
-    border-color: var(--primary-color);
+  background: none;
+  color: var(--primary-color);
+  border-color: var(--primary-color);
 }
 .secondary-nav-button:hover {
-    background: #f0f3ff;
+  background: #f0f3ff;
 }
 
 #userNameDisplay {
-    margin-right: 15px;
-    font-weight: 600;
-    color: var(--text-color);
+  margin-right: 15px;
+  font-weight: 600;
+  color: var(--text-color);
 }
 
 /* --- FOOTER --- */
 .app-footer {
-    padding: 15px;
-    background: var(--footer-bg);
-    color: var(--footer-text);
-    text-align: center;
-    font-size: 14px;
-    margin-top: auto; /* Pushes footer to the bottom */
+  padding: 15px;
+  background: var(--footer-bg);
+  color: var(--footer-text);
+  text-align: center;
+  font-size: 14px;
+  margin-top: auto; /* Pushes footer to the bottom */
 }
 .app-footer strong {
-    color: white;
+  color: white;
 }
 
 /* --- CONTENT AREA --- */
 .content-area {
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center; /* Center vertically for a cleaner look */
-    padding: 40px 20px;
-    width: 100%;
-    position: relative; /* For absolute positioning of forms */
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center vertically for a cleaner look */
+  padding: 40px 20px;
+  width: 100%;
+  position: relative; /* For absolute positioning of forms */
 }
 
 /* Auth Page Layout (Landing Page) */
 .auth-page-container {
-    width: 100%;
-    max-width: 900px;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 50px 0;
+  width: 100%;
+  max-width: 900px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 0;
 }
 
 .landing-content {
-    text-align: center;
-    max-width: 700px;
+  text-align: center;
+  max-width: 700px;
 }
 
 .landing-title {
-    font-size: 44px;
-    font-weight: 700;
-    color: var(--primary-color);
-    margin-bottom: 15px;
+  font-size: 44px;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 15px;
 }
 
 .landing-description {
-    font-size: 18px;
-    color: #555;
-    line-height: 1.6;
-    margin-bottom: 30px;
+  font-size: 18px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 30px;
 }
 
 .landing-cta {
-    font-size: 20px;
-    font-weight: 600;
-    color: var(--text-color);
-    margin-bottom: 40px;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 40px;
 }
 
 .interactive-demo {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
 }
 
 .demo-item {
-    background: #fff;
-    padding: 10px 20px;
-    border-radius: 50px;
-    font-weight: 600;
-    color: var(--primary-color);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  background: #fff;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-weight: 600;
+  color: var(--primary-color);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 }
 
+.demo-item:hover {
+  font-size: 20px;
+  animation: ease-in-out;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
 
 /* --- AUTH FORMS WRAPPER (This will hold the forms and appear on click) --- */
 .auth-forms-wrapper {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 50; /* Ensure forms appear above the landing content */
-    width: 100%;
-    max-width: 450px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 50; /* Ensure forms appear above the landing content */
+  width: 100%;
+  max-width: 450px;
 }
 
 .auth-card {
-    /* Ensures only one form shows at a time */
-    display: none; 
-    box-shadow: var(--shadow);
-    padding: 40px;
-    text-align: left;
+  /* Ensures only one form shows at a time */
+  display: none;
+  box-shadow: var(--shadow);
+  padding: 40px;
+  text-align: left;
 }
 .auth-card h2 {
-    text-align: center;
-    color: var(--primary-color);
-    margin-bottom: 20px;
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 20px;
 }
 .auth-card p span {
-    color: var(--primary-color);
-    font-weight: 600;
-    cursor: pointer;
+  color: var(--primary-color);
+  font-weight: 600;
+  cursor: pointer;
 }
-
 
 /* Logged-In Content Wrapper */
 .logged-in-content-wrapper {
-    width: 100%;
-    max-width: 800px; 
+  width: 100%;
+  max-width: 800px;
 }
-
 
 /* --- GENERAL CARD STYLES --- */
 .card {
-    background: var(--card-bg);
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: var(--shadow);
-    text-align: center;
-    margin: auto;
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  text-align: center;
+  margin: auto;
 }
 
 /* --- HOME PAGE STYLES --- */
 .home-card {
-    text-align: left;
+  text-align: left;
 }
 .home-card h2 {
-    color: var(--primary-color);
-    font-size: 32px;
+  color: var(--primary-color);
+  font-size: 32px;
 }
 .home-card .summary-text {
-    font-size: 18px;
-    margin-bottom: 30px;
+  font-size: 18px;
+  margin-bottom: 30px;
 }
 .home-card .start-btn {
-    padding: 15px 30px;
-    font-size: 18px;
+  padding: 15px 30px;
+  font-size: 18px;
 }
 .score-breakdown {
-    margin-top: 40px;
-    padding-top: 20px;
-    border-top: 1px solid #e0e0e0;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #e0e0e0;
 }
 .score-breakdown h3 {
-    color: var(--text-color);
-    margin-bottom: 15px;
+  color: var(--text-color);
+  margin-bottom: 15px;
 }
 .score-breakdown ul {
-    list-style: none;
-    padding: 0;
-    text-align: left;
+  list-style: none;
+  padding: 0;
+  text-align: left;
 }
 .score-breakdown li {
-    margin-bottom: 10px;
-    font-size: 16px;
+  margin-bottom: 10px;
+  font-size: 16px;
 }
 .level-badge {
-    display: inline-block;
-    padding: 3px 8px;
-    border-radius: 4px;
-    font-weight: 600;
-    margin-right: 10px;
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+  margin-right: 10px;
 }
-.beginner-badge { background: #d4edda; color: #155724; }
-.intermediate-badge { background: #ffeeba; color: #856404; }
-.advanced-badge { background: #f8d7da; color: #721c24; }
-
+.beginner-badge {
+  background: #d4edda;
+  color: #155724;
+}
+.intermediate-badge {
+  background: #ffeeba;
+  color: #856404;
+}
+.advanced-badge {
+  background: #f8d7da;
+  color: #721c24;
+}
 
 /* --- QUIZ SPECIFIC STYLES --- */
 .quiz-card {
-    text-align: left;
+  text-align: left;
 }
 
 .level-description-box {
-    background: #f0f3ff;
-    border-left: 5px solid var(--primary-color);
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 4px;
+  background: #f0f3ff;
+  border-left: 5px solid var(--primary-color);
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 4px;
 }
 .level-description-box h3 {
-    margin: 0 0 5px 0;
-    color: var(--primary-color);
+  margin: 0 0 5px 0;
+  color: var(--primary-color);
 }
 .level-description-box p {
-    margin: 0;
-    font-size: 14px;
-    color: #555;
+  margin: 0;
+  font-size: 14px;
+  color: #555;
 }
 
 #question {
-    font-size: 22px;
-    font-weight: 600;
-    margin: 25px 0 15px;
-    color: #444;
+  font-size: 22px;
+  font-weight: 600;
+  margin: 25px 0 15px;
+  color: #444;
 }
 
 /* Input, Buttons, Options */
-input, textarea, button {
-    width: 100%;
-    margin: 10px 0;
-    padding: 12px;
-    border-radius: 8px;
-    border: 1px solid #e0e0e0;
-    font-size: 16px;
+input,
+textarea,
+button {
+  width: 100%;
+  margin: 10px 0;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  font-size: 16px;
 }
 
 button {
-    background: var(--primary-color);
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: background 0.2s;
-    font-weight: 600;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-weight: 600;
 }
 
 button:hover {
-    background: var(--secondary-color);
+  background: var(--secondary-color);
 }
 
 .option {
-    padding: 15px;
-    margin: 10px 0;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.2s, border-color 0.2s;
+  padding: 15px;
+  margin: 10px 0;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
 }
 
 .option:hover {
-    background: #f9f9f9;
+  background: #f9f9f9;
 }
 
 .selected {
-    border-color: var(--primary-color);
-    background: #f0f3ff;
-    box-shadow: 0 0 5px rgba(74, 85, 225, 0.5);
+  border-color: var(--primary-color);
+  background: #f0f3ff;
+  box-shadow: 0 0 5px rgba(74, 85, 225, 0.5);
 }
 
 /* Progress Bar */
 .progress-bar {
-    background: #e0e0e0;
-    height: 10px;
-    border-radius: 5px;
-    overflow: hidden;
-    margin: 10px 0;
+  background: #e0e0e0;
+  height: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 10px 0;
 }
 
 #progressFill {
-    height: 100%;
-    width: 0%;
-    background: var(--primary-color);
-    transition: width 0.5s ease-in-out;
+  height: 100%;
+  width: 0%;
+  background: var(--primary-color);
+  transition: width 0.5s ease-in-out;
 }
 
 /* Messages */
 .message {
-    padding: 15px;
-    margin-top: 15px;
-    border-radius: 8px;
-    background: #fff3cd;
-    border: 1px solid #ffeeba;
-    color: #856404;
-    text-align: center;
+  padding: 15px;
+  margin-top: 15px;
+  border-radius: 8px;
+  background: #fff3cd;
+  border: 1px solid #ffeeba;
+  color: #856404;
+  text-align: center;
 }
 .message strong {
-    color: #444;
+  color: #444;
 }
 
 /* Style for the buttons container inside the message box */
 .msgBtns {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
 }
 
 /* Styling for the decision buttons (Continue/Result) */
 .msgBtns button {
-    width: auto;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 6px;
-    /* Overriding default button width/margin from global styles */
+  width: auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 6px;
+  /* Overriding default button width/margin from global styles */
 }
 
 /* Secondary style for 'Show Result' button */
 .msgBtns .secondary-btn {
-    background: none;
-    color: #856404;
-    border: 1px solid #856404;
+  background: none;
+  color: #856404;
+  border: 1px solid #856404;
 }
 .msgBtns .secondary-btn:hover {
-    background: #fff;
+  background: #fff;
 }
 
 .infoMsg {
-    margin-top: 10px;
-    text-align: center;
-    font-weight: 600;
+  margin-top: 10px;
+  text-align: center;
+  font-weight: 600;
 }
 
 /* Utility */
 .hidden {
-    display: none !important;
+  display: none !important;
 }
 
 /* Result Card Specific Styles */
 .result-card table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
 }
-.result-card th, .result-card td {
-    padding: 12px;
-    border: 1px solid #e0e0e0;
-    text-align: center;
+.result-card th,
+.result-card td {
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  text-align: center;
 }
 .result-card thead th {
-    background-color: var(--primary-color);
-    color: white;
+  background-color: var(--primary-color);
+  color: white;
 }
 .remark-box {
-    margin-top: 30px;
-    padding: 20px;
-    border-radius: 8px;
-    border: 2px solid var(--primary-color) !important;
-    background-color: #f0f3ff !important;
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 8px;
+  border: 2px solid var(--primary-color) !important;
+  background-color: #f0f3ff !important;
 }
 
 /* ================================
@@ -442,7 +493,7 @@ button:hover {
 }
 
 .section-title {
-  text-align:center;
+  text-align: center;
   font-size: 26px;
   font-weight: 700;
   color: #4f5dff;
@@ -507,6 +558,13 @@ button:hover {
 }
 
 /* Ensure the cards are visible when explicitly removing the hidden class */
-#loginPage.hidden { display: none !important; }
-#registerPage.hidden { display: none !important; }
-#loginPage:not(.hidden), #registerPage:not(.hidden) { display: block; }
+#loginPage.hidden {
+  display: none !important;
+}
+#registerPage.hidden {
+  display: none !important;
+}
+#loginPage:not(.hidden),
+#registerPage:not(.hidden) {
+  display: block;
+}

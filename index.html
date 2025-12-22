@@ -13,13 +13,13 @@
   <body>
     <div id="mainContainer" class="main-container">
       <header id="appHeader" class="app-header">
-        <div class="logo">
-          EduPlay
-          <span style="font-size: 14px; font-weight: 400; color: #aaa"
-            >An Interactive Web Technology Quiz App</span
-          >
-        </div>
+        <div class="logo">EduPlay</div>
         <nav class="user-nav">
+          <div id="Nav-links" class="nav-links">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#future" class="nav-link">Future Enhancements</a>
+          </div>
+
           <div id="authNavButtons" class="auth-buttons">
             <button
               onclick="showLogin()"
@@ -51,7 +51,8 @@
       <div id="contentArea" class="content-area">
         <div id="authPageContainer" class="landing-page-container">
           <div class="landing-content">
-            <h1 class="landing-title">
+            <div id="home">
+              <h1 class="landing-title">
               Master Frontend Development. Quiz By Quiz.
             </h1>
             <p class="landing-description">
@@ -64,15 +65,17 @@
               Ready to start your coding journey? <b>Login</b> or
               <b>Register</b> now!
             </p>
+            </div>
             <div class="interactive-demo">
               <span class="demo-item">💡 15 Challenging Questions</span>
               <span class="demo-item">📈 Level-wise Score Tracking</span>
               <span class="demo-item">🏆 Achieve Web Mastery</span>
             </div>
             <!-- Future Implementations Section -->
-            <div class="future-scope">
+            <div id="future" class="future-scope">
               <h2 class="section-title">
-                Future Implementations <br> (Scope for Enhancement)
+                Future Implementations <br />
+                (Scope for Enhancement)
               </h2>
 
               <div class="scope-item">
@@ -102,7 +105,7 @@
                   <li>🛠️ Admin Dashboard for Question Management</li>
                 </ul>
               </div>
-          </div>
+            </div>
           </div>
         </div>
 

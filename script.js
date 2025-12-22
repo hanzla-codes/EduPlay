@@ -59,6 +59,7 @@ const authFormsWrapper = document.getElementById('authFormsWrapper'); // Forms W
 const loggedInContent = document.getElementById('loggedInContent');
 const authNavButtons = document.getElementById('authNavButtons');
 const loggedInNav = document.getElementById('loggedInNav');
+const navLinks = document.getElementById('Nav-links');
 const userNameDisplay = document.getElementById('userNameDisplay');
 const appHeader = document.getElementById('appHeader'); // for message
 
@@ -110,6 +111,7 @@ function hideAllContent() {
 function updateNavigationState(isLoggedIn) {
     if (isLoggedIn) {
         authNavButtons.classList.add('hidden');
+        navLinks.classList.add('hidden');
         loggedInNav.classList.remove('hidden');
         userNameDisplay.textContent = `Hello, ${user}`;
         
@@ -170,7 +172,7 @@ function showHome() {
     currentLevel = 'beginner';
     currentQuestionIndex = 0;
 
-    document.getElementById('homeWelcome').textContent = `Welcome back, ${user}!`;
+    document.getElementById('homeWelcome').textContent = `Welcome, ${user}!`;
     loggedInContent.classList.remove('hidden');
     homePage.classList.remove('hidden');
 }
@@ -243,10 +245,10 @@ function register() {
     } else {
         users[usernameInput] = pass;
         localStorage.setItem('users', JSON.stringify(users));
-        updateInfoMessage(registerMsg, 'Registration successful! Please login.', true);
+        updateInfoMessage(registerMsg, 'Registration successful!', true);
         document.getElementById('regUser').value = '';
         document.getElementById('regPass').value = '';
-        setTimeout(showLogin, 1000); 
+        setTimeout(showHome, 1000); 
     }
 }
 
