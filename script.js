@@ -248,6 +248,7 @@ function register() {
         updateInfoMessage(registerMsg, 'Registration successful!', true);
         document.getElementById('regUser').value = '';
         document.getElementById('regPass').value = '';
+        user = usernameInput;
         setTimeout(showHome, 1000); 
     }
 }
