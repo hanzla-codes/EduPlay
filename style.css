@@ -568,3 +568,54 @@ button:hover {
 #registerPage:not(.hidden) {
   display: block;
 }
+
+/* Hamburger Button */
+.hamburger-btn {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--primary-color);
+}
+
+/* Mobile Nav Styles */
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  right: -250px; /* Hidden by default */
+  width: 250px;
+  height: 100%;
+  background: var(--card-bg);
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: right 0.3s ease-in-out;
+  z-index: 200;
+}
+
+.mobile-nav a,
+.mobile-nav button {
+  font-size: 18px;
+  width: 100%;
+}
+
+/* Show Menu */
+.mobile-nav.show {
+  right: 0;
+}
+
+/* Media Query for Mobile/Tablet */
+@media (max-width: 768px) {
+  .nav-links,
+  .auth-buttons,
+  .logged-in-nav {
+    display: none !important; /* Hide desktop nav */
+  }
+
+  .hamburger-btn {
+    display: block;
+  }
+}

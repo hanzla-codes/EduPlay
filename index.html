@@ -45,6 +45,38 @@
               Logout
             </button>
           </div>
+          <!-- Hamburger Menu for Mobile/Tablet -->
+          <button
+            id="hamburgerBtn"
+            class="hamburger-btn"
+            onclick="toggleMobileMenu()"
+          >
+            ☰
+          </button>
+
+          <!-- Wrap nav links in a container to slide in -->
+          <div id="mobileNav" class="mobile-nav hidden">
+            <a href="#home" class="nav-link" onclick="toggleMobileMenu()"
+              >Home</a
+            >
+            <a href="#future" class="nav-link" onclick="toggleMobileMenu()"
+              >Future Enhancements</a
+            >
+            <div id="mobileAuthButtons">
+              <button
+                onclick="showLogin()"
+                class="nav-button secondary-nav-button"
+              >
+                Login
+              </button>
+              <button
+                onclick="showRegister()"
+                class="nav-button primary-nav-button"
+              >
+                Register
+              </button>
+            </div>
+          </div>
         </nav>
       </header>
 
@@ -53,18 +85,18 @@
           <div class="landing-content">
             <div id="home">
               <h1 class="landing-title">
-              Master Frontend Development. Quiz By Quiz.
-            </h1>
-            <p class="landing-description">
-              Welcome to Web Quiz Pro! The ultimate platform to test and enhance
-              your skills in <b>HTML, CSS, and JavaScript</b>. Our quizzes are
-              structured into three progressively challenging levels:
-              <b>Beginner, Intermediate, and Advanced</b>.
-            </p>
-            <p class="landing-cta">
-              Ready to start your coding journey? <b>Login</b> or
-              <b>Register</b> now!
-            </p>
+                Master Frontend Development. Quiz By Quiz.
+              </h1>
+              <p class="landing-description">
+                Welcome to Web Quiz Pro! The ultimate platform to test and
+                enhance your skills in <b>HTML, CSS, and JavaScript</b>. Our
+                quizzes are structured into three progressively challenging
+                levels: <b>Beginner, Intermediate, and Advanced</b>.
+              </p>
+              <p class="landing-cta">
+                Ready to start your coding journey? <b>Login</b> or
+                <b>Register</b> now!
+              </p>
             </div>
             <div class="interactive-demo">
               <span class="demo-item">💡 15 Challenging Questions</span>
