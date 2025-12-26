@@ -55,7 +55,7 @@
           </button>
 
           <!-- Wrap nav links in a container to slide in -->
-          <div id="mobileNav" class="mobile-nav hidden">
+          <div id="mobileNav" class="mobile-nav">
             <a href="#home" class="nav-link" onclick="toggleMobileMenu()"
               >Home</a
             >
@@ -64,13 +64,13 @@
             >
             <div id="mobileAuthButtons">
               <button
-                onclick="showLogin()"
+                onclick="showLogin(); toggleMobileMenu(true)"
                 class="nav-button secondary-nav-button"
               >
                 Login
               </button>
               <button
-                onclick="showRegister()"
+                onclick="showRegister(); toggleMobileMenu(true)"
                 class="nav-button primary-nav-button"
               >
                 Register

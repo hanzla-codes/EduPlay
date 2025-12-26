@@ -1,3 +1,6 @@
+/* ============================================================
+   YOUR ORIGINAL STYLES (DO NOT TOUCH)
+   ============================================================ */
 * {
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
@@ -6,7 +9,7 @@
 :root {
   --primary-color: #4a55e1;
   --secondary-color: #6d80f8;
-  --background-color: #eef2ff; /* Very light blue background */
+  --background-color: #eef2ff;
   --card-bg: white;
   --text-color: #333;
   --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -19,11 +22,10 @@ body {
   margin: 0;
   min-height: 100vh;
   display: flex;
-  flex-direction: column; /* Main container fills viewport */
+  flex-direction: column;
   color: var(--text-color);
 }
 
-/* --- MAIN LAYOUT --- */
 .main-container {
   display: flex;
   flex-direction: column;
@@ -48,11 +50,10 @@ body {
 }
 
 .user-nav {
-  display: flex; /* Ensure the navigation container is a flex container */
+  display: flex;
   align-items: center;
 }
 
-/* Navigation Links */
 .nav-links {
   display: flex;
   align-items: center;
@@ -73,7 +74,6 @@ body {
   color: var(--primary-color);
 }
 
-/* Underline hover effect */
 .nav-link::after {
   content: "";
   position: absolute;
@@ -89,16 +89,15 @@ body {
   width: 100%;
 }
 
-/* Buttons Side-by-Side Fix */
 .auth-buttons,
 .logged-in-nav {
-  display: flex; /* Make the buttons inside these divs align horizontally */
+  display: flex;
   align-items: center;
 }
 
 .nav-button {
   padding: 8px 15px;
-  margin-left: 10px; /* Space between buttons */
+  margin-left: 10px;
   border: 1px solid transparent;
   border-radius: 6px;
   cursor: pointer;
@@ -129,31 +128,28 @@ body {
   color: var(--text-color);
 }
 
-/* --- FOOTER --- */
 .app-footer {
   padding: 15px;
   background: var(--footer-bg);
   color: var(--footer-text);
   text-align: center;
   font-size: 14px;
-  margin-top: auto; /* Pushes footer to the bottom */
+  margin-top: auto;
 }
 .app-footer strong {
   color: white;
 }
 
-/* --- CONTENT AREA --- */
 .content-area {
   flex-grow: 1;
   display: flex;
   justify-content: center;
-  align-items: center; /* Center vertically for a cleaner look */
+  align-items: center;
   padding: 40px 20px;
   width: 100%;
-  position: relative; /* For absolute positioning of forms */
+  position: relative;
 }
 
-/* Auth Page Layout (Landing Page) */
 .auth-page-container {
   width: 100%;
   max-width: 900px;
@@ -204,27 +200,25 @@ body {
   font-weight: 600;
   color: var(--primary-color);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .demo-item:hover {
-  font-size: 20px;
-  animation: ease-in-out;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* --- AUTH FORMS WRAPPER (This will hold the forms and appear on click) --- */
 .auth-forms-wrapper {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 50; /* Ensure forms appear above the landing content */
+  z-index: 50;
   width: 100%;
   max-width: 450px;
 }
 
 .auth-card {
-  /* Ensures only one form shows at a time */
   display: none;
   box-shadow: var(--shadow);
   padding: 40px;
@@ -241,13 +235,11 @@ body {
   cursor: pointer;
 }
 
-/* Logged-In Content Wrapper */
 .logged-in-content-wrapper {
   width: 100%;
   max-width: 800px;
 }
 
-/* --- GENERAL CARD STYLES --- */
 .card {
   background: var(--card-bg);
   padding: 30px;
@@ -257,7 +249,6 @@ body {
   margin: auto;
 }
 
-/* --- HOME PAGE STYLES --- */
 .home-card {
   text-align: left;
 }
@@ -291,6 +282,7 @@ body {
   margin-bottom: 10px;
   font-size: 16px;
 }
+
 .level-badge {
   display: inline-block;
   padding: 3px 8px;
@@ -311,7 +303,6 @@ body {
   color: #721c24;
 }
 
-/* --- QUIZ SPECIFIC STYLES --- */
 .quiz-card {
   text-align: left;
 }
@@ -340,7 +331,6 @@ body {
   color: #444;
 }
 
-/* Input, Buttons, Options */
 input,
 textarea,
 button {
@@ -384,7 +374,6 @@ button:hover {
   box-shadow: 0 0 5px rgba(74, 85, 225, 0.5);
 }
 
-/* Progress Bar */
 .progress-bar {
   background: #e0e0e0;
   height: 10px;
@@ -400,7 +389,6 @@ button:hover {
   transition: width 0.5s ease-in-out;
 }
 
-/* Messages */
 .message {
   padding: 15px;
   margin-top: 15px;
@@ -414,7 +402,6 @@ button:hover {
   color: #444;
 }
 
-/* Style for the buttons container inside the message box */
 .msgBtns {
   display: flex;
   justify-content: center;
@@ -422,16 +409,13 @@ button:hover {
   margin-top: 15px;
 }
 
-/* Styling for the decision buttons (Continue/Result) */
 .msgBtns button {
   width: auto;
   padding: 10px 20px;
   font-size: 16px;
   border-radius: 6px;
-  /* Overriding default button width/margin from global styles */
 }
 
-/* Secondary style for 'Show Result' button */
 .msgBtns .secondary-btn {
   background: none;
   color: #856404;
@@ -447,12 +431,10 @@ button:hover {
   font-weight: 600;
 }
 
-/* Utility */
 .hidden {
   display: none !important;
 }
 
-/* Result Card Specific Styles */
 .result-card table {
   width: 100%;
   border-collapse: collapse;
@@ -476,10 +458,6 @@ button:hover {
   background-color: #f0f3ff !important;
 }
 
-/* ================================
-   Future Implementations Section
-================================ */
-
 .future-scope {
   margin-top: 50px;
   padding: 40px 30px;
@@ -500,7 +478,6 @@ button:hover {
   margin-bottom: 30px;
 }
 
-/* Individual Scope Block */
 .scope-item {
   background: #f4f6ff;
   border-radius: 14px;
@@ -522,7 +499,6 @@ button:hover {
   margin-bottom: 10px;
 }
 
-/* Advanced Features List */
 .scope-list {
   list-style: none;
   padding-left: 0;
@@ -542,34 +518,13 @@ button:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .future-scope {
-    padding: 30px 20px;
-  }
-
-  .section-title {
-    font-size: 22px;
-  }
-
-  .scope-item h3 {
-    font-size: 18px;
-  }
-}
-
-/* Ensure the cards are visible when explicitly removing the hidden class */
-#loginPage.hidden {
+#loginPage.hidden, #registerPage.hidden {
   display: none !important;
 }
-#registerPage.hidden {
-  display: none !important;
-}
-#loginPage:not(.hidden),
-#registerPage:not(.hidden) {
+#loginPage:not(.hidden), #registerPage:not(.hidden) {
   display: block;
 }
 
-/* Hamburger Button */
 .hamburger-btn {
   display: none;
   font-size: 28px;
@@ -579,11 +534,10 @@ button:hover {
   color: var(--primary-color);
 }
 
-/* Mobile Nav Styles */
 .mobile-nav {
   position: fixed;
   top: 0;
-  right: -250px; /* Hidden by default */
+  right: -250px;
   width: 250px;
   height: 100%;
   background: var(--card-bg);
@@ -596,26 +550,96 @@ button:hover {
   z-index: 200;
 }
 
-.mobile-nav a,
-.mobile-nav button {
-  font-size: 18px;
-  width: 100%;
-}
-
-/* Show Menu */
 .mobile-nav.show {
   right: 0;
 }
 
-/* Media Query for Mobile/Tablet */
 @media (max-width: 768px) {
-  .nav-links,
-  .auth-buttons,
-  .logged-in-nav {
-    display: none !important; /* Hide desktop nav */
-  }
+  .nav-links, .auth-buttons, .logged-in-nav { display: none !important; }
+  .hamburger-btn { display: block; }
+}
 
-  .hamburger-btn {
-    display: block;
-  }
+/* ============================================================
+   NEW ANIMATIONS (ADDED AT THE END)
+   ============================================================ */
+
+/* Correct Answer Bounce */
+.correct-trigger {
+  animation: bounceEffect 0.6s ease;
+  border-color: #28a745 !important;
+  background-color: #d4edda !important;
+}
+
+/* Wrong Answer Shake */
+.warning-shake {
+  animation: shakeEffect 0.4s ease-in-out;
+  border-color: #dc3545 !important;
+  background-color: #f8d7da !important;
+}
+
+@keyframes shakeEffect {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-8px); }
+  75% { transform: translateX(8px); }
+}
+
+@keyframes bounceEffect {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
+}
+
+/* Option Hover smooth transition */
+.option {
+  transition: transform 0.2s, background 0.2s, border-color 0.2s;
+}
+.option:active {
+  transform: scale(0.97);
+}
+
+/* --- Nayi Animations --- */
+
+/* 1. Page Entrance (Jab bhi koi section show ho) */
+.card:not(.hidden), 
+.auth-card:not(.hidden) {
+    animation: superPop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes superPop {
+    0% { transform: scale(0.9); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* 2. Floating Demo Items (Landing page ke items ko move karne ke liye) */
+.demo-item {
+    animation: float 3s ease-in-out infinite;
+}
+
+.demo-item:nth-child(2) {
+    animation-delay: 1s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* 3. Result Score Pop (Final score ke liye) */
+.final-score-anim {
+    font-size: 40px;
+    font-weight: bold;
+    color: var(--primary-color);
+    animation: pulseScore 1.5s infinite;
+}
+
+@keyframes pulseScore {
+    0% { transform: scale(1); text-shadow: 0 0 0px rgba(74, 85, 225, 0); }
+    50% { transform: scale(1.1); text-shadow: 0 0 15px rgba(74, 85, 225, 0.5); }
+    100% { transform: scale(1); text-shadow: 0 0 0px rgba(74, 85, 225, 0); }
+}
+
+/* 4. Button Hover "Glow" */
+.start-btn:hover {
+    box-shadow: 0 0 20px rgba(74, 85, 225, 0.4);
+    letter-spacing: 1px;
 }

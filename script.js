@@ -102,6 +102,7 @@ function toggleMobileMenu() {
   mobileNav.classList.toggle("show");
 }
 
+
 function hideAllContent() {
   // Hide all internal pages
   authPageContainer.classList.add("hidden"); // Landing page
@@ -365,7 +366,7 @@ function selectOption(element, text) {
 function submitAnswer() {
   let userAnswer;
   const currentQuestion = quizData[currentLevel][currentQuestionIndex];
-
+ messageBox.classList.remove("warning-shake", "correct-trigger");
   if (currentQuestion.type === "multiple-choice") {
     userAnswer = selectedOption;
   } else if (currentQuestion.type === "short-answer") {
@@ -402,8 +403,12 @@ function submitAnswer() {
     const points = LEVEL_POINTS[currentLevel];
     totalScore += points;
     levelScores[currentLevel] += points;
+    messageBox.classList.remove("hidden");
+    messageBox.classList.add("correct-trigger")
     messageText.innerHTML = `<span style="color:green; font-weight:bold;">Correct!</span> You earned ${points} points.`;
   } else {
+    messageBox.classList.remove("hidden");
+    messageBox.classList.add("warning-shake");
     messageText.innerHTML = `<span style="color:red; font-weight:bold;">Incorrect!</span> The correct answer was: <strong>${currentQuestion.answer}</strong>.`;
   }
 
@@ -573,3 +578,6 @@ document.addEventListener("DOMContentLoaded", () => {
     showLandingPage();
   }
 });
+
+// Result generate karte waqt score element par ye class laga dena
+document.getElementById('finalScoreDisplay').classList.add('final-score-anim');
