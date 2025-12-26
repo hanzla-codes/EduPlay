@@ -10,27 +10,23 @@
       rel="stylesheet"
     />
   </head>
+
   <body>
     <div id="mainContainer" class="main-container">
       <header id="appHeader" class="app-header">
-        <div class="logo">EduPlay</div>
+        <div class="logo" onclick="showLandingPage()">EduPlay</div>
+
         <nav class="user-nav">
           <div id="Nav-links" class="nav-links">
-            <a href="#home" class="nav-link">Home</a>
-            <a href="#future" class="nav-link">Future Enhancements</a>
+            <a href="#home" class="nav-link" onclick="showLandingPage()">Home</a>
+            <a href="#future" class="nav-link" onclick="showLandingPage()">Future Enhancements</a>
           </div>
 
           <div id="authNavButtons" class="auth-buttons">
-            <button
-              onclick="showLogin()"
-              class="nav-button secondary-nav-button"
-            >
+            <button onclick="showLogin()" class="nav-button secondary-nav-button">
               Login
             </button>
-            <button
-              onclick="showRegister()"
-              class="nav-button primary-nav-button"
-            >
+            <button onclick="showRegister()" class="nav-button primary-nav-button">
               Register
             </button>
           </div>
@@ -45,7 +41,7 @@
               Logout
             </button>
           </div>
-          <!-- Hamburger Menu for Mobile/Tablet -->
+
           <button
             id="hamburgerBtn"
             class="hamburger-btn"
@@ -54,14 +50,12 @@
             ☰
           </button>
 
-          <!-- Wrap nav links in a container to slide in -->
           <div id="mobileNav" class="mobile-nav">
-            <a href="#home" class="nav-link" onclick="toggleMobileMenu()"
-              >Home</a
-            >
-            <a href="#future" class="nav-link" onclick="toggleMobileMenu()"
-              >Future Enhancements</a
-            >
+            <a href="#home" class="nav-link" onclick="toggleMobileMenu()">Home</a>
+            <a href="#future" class="nav-link" onclick="toggleMobileMenu()">
+              Future Enhancements
+            </a>
+
             <div id="mobileAuthButtons">
               <button
                 onclick="showLogin(); toggleMobileMenu(true)"
@@ -87,23 +81,26 @@
               <h1 class="landing-title">
                 Master Frontend Development. Quiz By Quiz.
               </h1>
+
               <p class="landing-description">
-                Welcome to Web Quiz Pro! The ultimate platform to test and
-                enhance your skills in <b>HTML, CSS, and JavaScript</b>. Our
-                quizzes are structured into three progressively challenging
-                levels: <b>Beginner, Intermediate, and Advanced</b>.
+                Welcome to Web Quiz Pro! The ultimate platform to test and enhance
+                your skills in <b>HTML, CSS, and JavaScript</b>. Our quizzes are
+                structured into three progressively challenging levels:
+                <b>Beginner, Intermediate, and Advanced</b>.
               </p>
+
               <p class="landing-cta">
                 Ready to start your coding journey? <b>Login</b> or
                 <b>Register</b> now!
               </p>
             </div>
+
             <div class="interactive-demo">
               <span class="demo-item">💡 15 Challenging Questions</span>
               <span class="demo-item">📈 Level-wise Score Tracking</span>
               <span class="demo-item">🏆 Achieve Web Mastery</span>
             </div>
-            <!-- Future Implementations Section -->
+
             <div id="future" class="future-scope">
               <h2 class="section-title">
                 Future Implementations <br />
@@ -113,8 +110,8 @@
               <div class="scope-item">
                 <h3>Backend Integration & Database</h3>
                 <p>
-                  <b>Current Limitation:</b> Reliance on Local Storage limits
-                  data persistence and security.
+                  <b>Current Limitation:</b> Reliance on Local Storage limits data
+                  persistence and security.
                 </p>
                 <p>
                   <b>Proposed Solution:</b> Implement a backend using
@@ -133,8 +130,8 @@
                   <li>🌍 Global Leaderboard</li>
                   <li>⏱️ Question Timer</li>
                   <li>📊 Detailed Answer Review</li>
-                  <li>📚 Multi-Subject Support (React, Vue, TypeScript)</li>
-                  <li>🛠️ Admin Dashboard for Question Management</li>
+                  <li>📚 Multi-Subject Support</li>
+                  <li>🛠️ Admin Dashboard</li>
                 </ul>
               </div>
             </div>
@@ -147,14 +144,12 @@
             <input
               id="loginUser"
               placeholder="Username"
-              aria-label="Username"
               onkeypress="handleKeyPress(event, 'login')"
             />
             <input
               id="loginPass"
               type="password"
               placeholder="Password"
-              aria-label="Password"
               onkeypress="handleKeyPress(event, 'login')"
             />
             <button onclick="login()">Login</button>
@@ -170,14 +165,12 @@
             <input
               id="regUser"
               placeholder="Username"
-              aria-label="Username"
               onkeypress="handleKeyPress(event, 'register')"
             />
             <input
               id="regPass"
               type="password"
               placeholder="Password"
-              aria-label="Password"
               onkeypress="handleKeyPress(event, 'register')"
             />
             <button onclick="register()">Register</button>
@@ -196,7 +189,7 @@
             <button onclick="startQuiz()" class="start-btn">
               Start New Quiz
             </button>
-
+            
             <div class="score-breakdown">
               <h3>Scoring & Levels</h3>
               <ul>
@@ -220,35 +213,20 @@
           </div>
 
           <div id="quizPage" class="card quiz-card hidden animate">
-            <div id="levelDescriptionBox" class="level-description-box">
-              <h3 id="currentLevelTitle"></h3>
-              <p id="currentLevelDescription"></p>
-            </div>
+            <h3 id="currentLevelTitle"></h3>
+            <p id="currentLevelDescription"></p>
 
             <h4 id="levelText"></h4>
             <div class="progress-bar">
               <div id="progressFill"></div>
             </div>
             <p id="progress"></p>
-            <h3 id="question"></h3>
 
+            <h3 id="question"></h3>
             <div id="options"></div>
 
-            <input
-              id="answerInput"
-              class="short-answer-input hidden"
-              placeholder="Type your answer (e.g., 'padding')"
-              aria-label="Short Answer Input"
-              onkeypress="handleKeyPress(event, 'submit')"
-            />
-
-            <textarea
-              id="advancedInput"
-              class="hidden"
-              placeholder="Write your answer here..."
-              aria-label="Advanced Answer"
-              onkeypress="handleKeyPress(event, 'submit')"
-            ></textarea>
+            <input id="answerInput" class="hidden" />
+            <textarea id="advancedInput" class="hidden"></textarea>
 
             <button onclick="submitAnswer()">Submit</button>
 
@@ -266,7 +244,7 @@
         </div>
       </div>
 
-      <footer id="appFooter" class="app-footer">
+      <footer class="app-footer">
         <p>&copy; 2025 EduPlay. Developed by <b>MUHAMMAD HANZLA</b>.</p>
       </footer>
     </div>

@@ -1,6 +1,3 @@
-/* ============================================================
-   YOUR ORIGINAL STYLES (DO NOT TOUCH)
-   ============================================================ */
 * {
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
@@ -44,6 +41,7 @@ body {
 }
 
 .logo {
+  cursor: pointer;
   font-size: 24px;
   font-weight: 700;
   color: var(--primary-color);
@@ -559,10 +557,6 @@ button:hover {
   .hamburger-btn { display: block; }
 }
 
-/* ============================================================
-   NEW ANIMATIONS (ADDED AT THE END)
-   ============================================================ */
-
 /* Correct Answer Bounce */
 .correct-trigger {
   animation: bounceEffect 0.6s ease;
@@ -597,9 +591,7 @@ button:hover {
   transform: scale(0.97);
 }
 
-/* --- Nayi Animations --- */
-
-/* 1. Page Entrance (Jab bhi koi section show ho) */
+/* 1. Page Entrance */
 .card:not(.hidden), 
 .auth-card:not(.hidden) {
     animation: superPop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -610,7 +602,7 @@ button:hover {
     100% { transform: scale(1); opacity: 1; }
 }
 
-/* 2. Floating Demo Items (Landing page ke items ko move karne ke liye) */
+/* 2. Floating Demo Items  */
 .demo-item {
     animation: float 3s ease-in-out infinite;
 }
@@ -624,7 +616,7 @@ button:hover {
     50% { transform: translateY(-10px); }
 }
 
-/* 3. Result Score Pop (Final score ke liye) */
+/* 3. Result Score Pop */
 .final-score-anim {
     font-size: 40px;
     font-weight: bold;

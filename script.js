@@ -272,9 +272,8 @@ function register() {
 
 // --- Enter Key Handler ---
 function handleKeyPress(event, action) {
-  // Check if the pressed key is Enter (key code 13 or key 'Enter')
   if (event.key === "Enter" || event.keyCode === 13) {
-    event.preventDefault(); // Prevent default form submission
+    event.preventDefault(); 
 
     if (action === "login") {
       login();
@@ -413,10 +412,10 @@ function submitAnswer() {
   }
 
   // --- Delay ki jagah "Next" button ka logic ---
-  submitButton.classList.add("hidden"); // Submit button ko chupayein
+  submitButton.classList.add("hidden"); 
   messageBox.classList.remove("hidden");
   msgBtns.classList.remove("hidden");
-  msgBtns.innerHTML = ""; // Pehle se maujood buttons clear karein
+  msgBtns.innerHTML = ""; 
 
   const nextBtn = document.createElement("button");
   nextBtn.textContent = "Next Question →";
@@ -445,9 +444,7 @@ function goToNextLevel() {
   loadQuestion();
 }
 
-/**
- * Handles the completion of a quiz level, giving the user the option to continue or view results.
- */
+
 function handleLevelCompletion() {
   progressFill.style.width = "100%";
   submitButton.classList.add("hidden"); // Hide submit button
@@ -551,7 +548,7 @@ function showResult() {
         </table>
 
         <div class="remark-box" style="margin-top: 30px;">
-            <p style="font-size: 20px; font-weight: bold; margin-bottom: 5px;">
+            <p id="finalScoreDisplay" class="final-score-anim">
                 Total Score: ${totalScore} / ${maxTotalScore}
             </p>
             <p style="font-size: 18px; font-style: italic;">
@@ -563,21 +560,9 @@ function showResult() {
 
 // --- Initial Setup ---
 document.addEventListener("DOMContentLoaded", () => {
-  // Check local storage for user state (though user variable is null on fresh load, this is good practice)
-  if (localStorage.getItem("currentUser")) {
-    // In a real app, you'd fetch user data. Here we mock it.
-    // If you want to persist the user, uncomment and adjust:
-    // user = localStorage.getItem('currentUser');
-    // showHome();
-  }
-
-  // Since we are not persisting user state in this mock app, show landing page.
   if (user) {
     showHome();
   } else {
     showLandingPage();
   }
 });
-
-// Result generate karte waqt score element par ye class laga dena
-document.getElementById('finalScoreDisplay').classList.add('final-score-anim');
